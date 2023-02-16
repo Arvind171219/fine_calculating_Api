@@ -117,7 +117,7 @@ public class TransactionService {
 //
 //        return transactionId;
 //    }
-public int  returnBook(int cardId, int bookId) throws Exception{
+public Book  returnBook(int cardId, int bookId) throws Exception{
 
     List<Transactions> transactions = transactionRepository.getTransactionsForBookAndCard(cardId, bookId);
     Transactions transaction = transactions.get(transactions.size() - 1);
@@ -154,7 +154,7 @@ public int  returnBook(int cardId, int bookId) throws Exception{
 
     transactionRepository.save(tr);
 
- return fine;
+    return book;
 }
 
 

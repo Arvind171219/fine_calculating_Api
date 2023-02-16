@@ -2,6 +2,7 @@ package com.example.Student_Library_Management_System.Controllers;
 
 
 import com.example.Student_Library_Management_System.DTOs.IssueBookRequestDto;
+import com.example.Student_Library_Management_System.Models.Book;
 import com.example.Student_Library_Management_System.Services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class TransactionController {
     }
 
     @GetMapping("/getTxnInfo")
-    public int getTransactionEntry(@RequestParam("bookId")Integer bookId,@RequestParam
+    public Book getTransactionEntry(@RequestParam("bookId")Integer bookId, @RequestParam
             ("cardId")Integer cardId) throws Exception {
        return transactionService.returnBook(bookId,cardId);
     }
